@@ -5,9 +5,14 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - run: npm install
     - name: setup project
       run: make setup
     - name: run lint
       run: make lint
     - name: run tests
       run: make test
+    - name: Print Hello from Hexlet
+      uses: hexlet-components/hello-from-hexlet-action@release 
+
